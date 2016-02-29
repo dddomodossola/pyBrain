@@ -3,7 +3,9 @@
 Brief description
 ====
 Let's start to say what this project isn't.
+
 THIS WORK IS NOT TARGETED TO BE A HUMAN'S BRAIN IMPLEMENTATION
+
 I'M NOT AIMING TO PRODUCE A SPEAKING UMAN BRAIN
 
 THIS PROJECT IS TARGETED TO PRODUCE A GENERIC TEACHABLE *ARTIFICIAL INTELLIGENCE*.
@@ -16,6 +18,14 @@ Considering a set of binary inputs, and a set of binary outputs, we have to crea
 relate all the outputs combinations.
 
 This data structure must allow to be *modeled* in order to provide, for a given input, the best outputs combination.
+In order to achieve this we create two hidden layers that interconnect the inputs and outputs layer.
+
+The first hidden layer is composed by a number of *neurons* that represents all the inputs configurations. 
+A specific input configuration activates one specific *neuron*.
+
+The second hidden layer is composed by a number of *neurons* that represents all the outputs configurations.
+A specific *first layer neuron* can activate potentially all *second layer neurons*, but only one gets activated. 
+The one that activates depends on the *strength* of its connection.
 
 ![Alt text](https://raw.githubusercontent.com/dddomodossola/pyBrain/master/res/basic_network.png "Basic network")
 
@@ -31,7 +41,7 @@ how to do this with the said data structure? We can provide back the previous in
 So what we have now?
 The modelable substratus corresponds to a permanent memory that gets modeled by the *experience* of the network.
 The inputs and outputs that are provdided back to the network, corresponds to a short time memory. This means that, an output of the network is conditioned by the previous events.
-The inputs and outputs can be provided back to the network N times, in consideration of the wanted solveable sequences of operations.
+The inputs and outputs can be provided back to the network N times, in consideration of the wanted solveable sequences length of operations.
 
 Considering that the connections in the substratus increases in complexity exponentially, this requires special implementation solutions.
 
